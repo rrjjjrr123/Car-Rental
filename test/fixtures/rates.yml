@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rate_type: 1
+  category: 1
+  weekly: 1
+  daily: 1
+
+two:
+  rate_type: 1
+  category: 1
+  weekly: 1
+  daily: 1

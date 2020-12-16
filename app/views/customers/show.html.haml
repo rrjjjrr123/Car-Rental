@@ -1,0 +1,7 @@
+%h1= @customer.name
+%p= @customer.phone
+%ul
+  %li= link_to "Edit", edit_customer_path(@customer)
+  %li= link_to "Destroy", customers_path(@customer), |
+      method: :delete,                           |
+      data: { confirm: "Are you sure?" }         |

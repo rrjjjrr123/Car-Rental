@@ -1,0 +1,24 @@
+%h1 New Vehicle
+= form_with model: @vehicle do |form|
+  %div
+    = form.label :Descrption
+    %br/
+    = form.text_field :description
+  %br/
+  %div
+    = form.label :Year
+    %br/
+    = form.select :year, ['2015', '2016', '2017', '2018', '2019', '2020']
+  %br/
+  %div
+    = form.label :Category
+    %br/
+    = form.select :category, Vehicle.categories.keys
+  %br/
+  %div
+    = form.label :VehicleType
+    %br/
+    = form.select :vehicle_type, VehicleType.id_with_names
+  %br/
+  %div
+    = form.submit
