@@ -1,19 +1,39 @@
 %h1 New Rental
 = form_with model: @rental do |form|
+  %br/
+
   %div
     = form.label :StartDate
     %br/
-    = form.date_field :start_date
+    = form.date_field :start_date, value: Time.now.strftime('%Y-%m-%d')
   %br/
   %div
     = form.label :EndDate
     %br/
-    = form.date_field :end_date
+    = form.date_field :return_date, value: (Time.now + 1.day).strftime('%Y-%m-%d')
+  %br/
+
+  %div
+    = form.label :PaymentDate
+    %br/
+    = form.date_field :payment_date, value: (Time.now + 1.day).strftime('%Y-%m-%d')
   %br/
   %div
     = form.label :VehicleType
     %br/
-    = select_tag "vehicle_type"
+    = form.select :vehicle_type, VehicleType.where(id: Vehicle.where(vehicle_id: Rental.where(returned: 1).pluck(:vehicle_id)).pluck(:vehicle_type)).pluck(:name, :id)
+  %br/
+  %div
+    = form.label :Quantity
+    %br/
+    = form.select :qty, [1, 2, 3, 4, 5]
+  %br/
+
+  %div
+    = form.label :Category
+    %br/
+    = form.select :category, Vehicle.categories.
+  = hidden_field_tag :cust_id, params[:customer_id]
   %br/
   %div
     = form.submit
