@@ -26,7 +26,7 @@ class RentalsController < ApplicationController
   end
 
   def all_rental_payment_due
-    @rental_dues = Rental.where("payment_date >=returned_date")
+    @rentals = Rental.includes(:customer, :vehicle).order(start_date: :asc).all
   end
 
   private

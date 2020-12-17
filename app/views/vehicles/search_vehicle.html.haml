@@ -9,4 +9,4 @@
     %tr
       %td= vehicle.id
       %td= vehicle.description
-      %td= 0.0
+      %td= Rental.where(vehicle_id: vehicle.vehicle_id).avg(:total_amount)

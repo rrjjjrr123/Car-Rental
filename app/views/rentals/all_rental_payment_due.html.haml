@@ -1,29 +1,14 @@
 %h1 Payment Due
 %table
   %tr
-    %th OrderDate
-    %th StartDate
     %th ReturnDate
-    %th TotalDays
-    %th VIN
-    %th Vehicle
-    %th Type
-    %th Category
-    %th CustomerID
-    %th CustomerName
-    %th OrderAmount
-    %th RentalBalance
+    %th Customer Name
+    %th Vehicle Info
+    %th Payment Due
+
   - @rentals.each do |rental|
     %tr
-      %td= rental_date(rental.order_date)
-      %td= rental_date(rental.start_date)
       %td= rental_date(rental.return_date)
-      %td= number_of_days(rental)
+      %td= Customer.find_by(cust_id: rental.cust_id).name
       %td= rental.vehicle_id
-      %td= rental.vehicle_description
-      %td= vehicle_type(rental)
-      %td= rental.vehicle.category.capitalize
-      %td= rental.cust_id
-      %td= rental.customer_name
-      %td= rental.total_amount
-      %td= rental.start_date.to_date.strftime("%m-%d-%y")
+      %td= remaining_balance(rental)
