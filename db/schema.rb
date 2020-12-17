@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_073605) do
+ActiveRecord::Schema.define(version: 2020_12_16_221339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_12_16_073605) do
     t.integer "cust_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "returned"
     t.index ["cust_id"], name: "index_rentals_on_cust_id"
   end
 

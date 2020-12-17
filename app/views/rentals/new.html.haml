@@ -1,0 +1,21 @@
+%h1 New Rental
+= form_with model: @rental do |form|
+  %div
+    = form.label :StartDate
+    %br/
+    = form.date_field :start_date
+  %br/
+  %div
+    = form.label :EndDate
+    %br/
+    = form.date_field :end_date
+  %br/
+  %div
+    = form.label :VehicleType
+    %br/
+    = select_tag "vehicle_type"
+  %br/
+  %div
+    = form.submit
+
+:javascript

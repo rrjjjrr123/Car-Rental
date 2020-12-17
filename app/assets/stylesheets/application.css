@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+
+.searchbox {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 5px 33px 5px 10px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.searchbox input {
+  background: #fff;
+  border: 0px solid #ddd;
+  box-shadow: none !important;
+  color: #000;
+}

@@ -1,0 +1,20 @@
+%h1 Listing Customers
+
+
+%ul.nav.navbar-nav
+  %li.searchwrap
+    .searchbox
+      = form_tag search_customer_path, method: :get do
+        = text_field_tag "search", nil, placeholder: "Company Search..."
+        %span.searchicon
+          %i.fa.fa-search
+%table
+  %tr
+    %th Customer ID
+    %th Name
+    %th Remaining Balance
+  - @customers.each do |customer|
+    %tr
+      %td= customer.id
+      %td= customer.name
+      %td= remaining_balance(Rental.find_by(cust_id: customer.cust_id))

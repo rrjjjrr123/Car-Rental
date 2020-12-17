@@ -1,4 +1,4 @@
-rate_type,category,weekly,daily
+type,category,weekly,daily
 1,0,480,80
 1,1,600,100
 2,0,530,90

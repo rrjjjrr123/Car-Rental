@@ -1,0 +1,12 @@
+%h1 Search Vehicle
+
+%table
+  %tr
+    %th VIN ID
+    %th Description
+    %th Average Daily Price
+  - @search.each do |vehicle|
+    %tr
+      %td= vehicle.id
+      %td= vehicle.description
+      %td= 0.0

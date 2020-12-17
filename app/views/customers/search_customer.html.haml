@@ -1,0 +1,12 @@
+%h1 Search Customers
+
+%table
+  %tr
+    %th Customer ID
+    %th Name
+    %th Remainig Balance
+  - @search.each do |customer|
+    %tr
+      %td= customer.id
+      %td= customer.name
+      %td= customer.phone
